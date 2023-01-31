@@ -96,6 +96,7 @@ message InternalPackage {
   google.protobuf.Timestamp created_on = 8 [(tagger.v1.tags) = "bson:\"created_on\" json:\"created_on\""];
   string checksum = 9 [(tagger.v1.tags) = "bson:\"checksum\" json:\"checksum\""];
   bool latest = 10 [(tagger.v1.tags) = "bson:\"latest\" json:\"latest\""];
+  string url = 11 [(tagger.v1.tags) = "bson:\"url\" json:\"url\""];
 }
 
 message GetPackageRequest {

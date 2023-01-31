@@ -1732,7 +1732,8 @@ proto.viam.app.packages.v1.InternalPackage.toObject = function(includeInstance, 
     blobPath: jspb.Message.getFieldWithDefault(msg, 7, ""),
     createdOn: (f = msg.getCreatedOn()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
     checksum: jspb.Message.getFieldWithDefault(msg, 9, ""),
-    latest: jspb.Message.getBooleanFieldWithDefault(msg, 10, false)
+    latest: jspb.Message.getBooleanFieldWithDefault(msg, 10, false),
+    url: jspb.Message.getFieldWithDefault(msg, 11, "")
   };
 
   if (includeInstance) {
@@ -1811,6 +1812,10 @@ proto.viam.app.packages.v1.InternalPackage.deserializeBinaryFromReader = functio
     case 10:
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setLatest(value);
+      break;
+    case 11:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setUrl(value);
       break;
     default:
       reader.skipField();
@@ -1911,6 +1916,13 @@ proto.viam.app.packages.v1.InternalPackage.serializeBinaryToWriter = function(me
   if (f) {
     writer.writeBool(
       10,
+      f
+    );
+  }
+  f = message.getUrl();
+  if (f.length > 0) {
+    writer.writeString(
+      11,
       f
     );
   }
@@ -2152,6 +2164,24 @@ proto.viam.app.packages.v1.InternalPackage.prototype.getLatest = function() {
  */
 proto.viam.app.packages.v1.InternalPackage.prototype.setLatest = function(value) {
   return jspb.Message.setProto3BooleanField(this, 10, value);
+};
+
+
+/**
+ * optional string url = 11;
+ * @return {string}
+ */
+proto.viam.app.packages.v1.InternalPackage.prototype.getUrl = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 11, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.viam.app.packages.v1.InternalPackage} returns this
+ */
+proto.viam.app.packages.v1.InternalPackage.prototype.setUrl = function(value) {
+  return jspb.Message.setProto3StringField(this, 11, value);
 };
 
 

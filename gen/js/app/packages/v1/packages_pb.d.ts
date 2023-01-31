@@ -245,6 +245,9 @@ export class InternalPackage extends jspb.Message {
   getLatest(): boolean;
   setLatest(value: boolean): void;
 
+  getUrl(): string;
+  setUrl(value: string): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): InternalPackage.AsObject;
   static toObject(includeInstance: boolean, msg: InternalPackage): InternalPackage.AsObject;
@@ -267,6 +270,7 @@ export namespace InternalPackage {
     createdOn?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     checksum: string,
     latest: boolean,
+    url: string,
   }
 }
 
